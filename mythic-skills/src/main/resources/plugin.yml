@@ -1,0 +1,21 @@
+name: Mythic-Skills
+description: Mythic Skills
+author: Mythic Dev
+main: net.mythics.App
+version: 0.0.1
+api-version: 1.20
+commands:
+  itemget:
+    aliases: ["ig"]
+    description: "Obtener items."
+  stats:
+    aliases: ["estadisticas"]
+    description: "Checar habilidades."
+  transfer:
+    aliases: ["transferir","dar"]
+    description: "Transfiere orbes."
+  orbs:
+    aliases: ["orb","orbes"]
+    description: "Checar tus orbes disponibles."
+  manager:
+    description: "Reiniciar plugin."
