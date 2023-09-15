@@ -3,10 +3,12 @@ package net.mythics.utils.inventories;
 import java.util.HashMap;
 import java.util.List;
 
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import net.mythics.utils.Items;
+import net.mythics.utils.ymls.Stats;
 
 public class Helpers {
 
@@ -100,5 +102,20 @@ public class Helpers {
         }
         newString.append("&8]");
         return newString.toString();
+    }
+
+    public static int generalLevelPlayer(Player player){
+        FileConfiguration stats = Stats.getStats();
+
+
+        int strength = stats.getInt("Players."+player.getUniqueId()+".skills"+".strength");
+        int agility = stats.getInt("Players."+player.getUniqueId()+".skills"+".agility");
+        int resistance = stats.getInt("Players."+player.getUniqueId()+".skills"+".resistance");
+        int attackspeed = stats.getInt("Players."+player.getUniqueId()+".skills"+".attackspeed");
+        int toughness = stats.getInt("Players."+player.getUniqueId()+".skills"+".toughness");
+
+        int summation = strength+agility+resistance+attackspeed+toughness;
+
+        return summation/100;
     }
 }

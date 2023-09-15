@@ -5,6 +5,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import net.mythics.api.PluginAPI;
 import net.mythics.commands.ClassSelector;
 import net.mythics.commands.ItemsGet;
 import net.mythics.commands.Levels;
