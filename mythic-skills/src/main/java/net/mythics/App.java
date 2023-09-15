@@ -5,6 +5,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import net.mythics.commands.ClassSelector;
 import net.mythics.commands.ItemsGet;
 import net.mythics.commands.Levels;
 import net.mythics.commands.Manager;
@@ -14,13 +15,17 @@ import net.mythics.listeners.ChatListenerForMenus;
 import net.mythics.listeners.ExpGiver;
 import net.mythics.listeners.JoinSetup;
 import net.mythics.listeners.PickUpOrb;
-import net.mythics.utils.Stats;
+import net.mythics.listeners.RPGClasses;
 import net.mythics.utils.inventories.AddExpInventory;
 import net.mythics.utils.inventories.Helpers;
 import net.mythics.utils.inventories.SkillsInventory;
 import net.mythics.utils.statsinventories.generalmenumanager.GeneralMenuManager;
 import net.mythics.utils.statsinventories.generalmenumanager.GeneralMenus;
+import net.mythics.utils.statsinventories.generalmenuplayer.ClassesMenu;
 import net.mythics.utils.statsinventories.generalmenuplayer.GeneralMenuPlayer;
+import net.mythics.utils.ymls.Messages;
+import net.mythics.utils.ymls.Settings;
+import net.mythics.utils.ymls.Stats;
 
 public class App extends JavaPlugin{
     
@@ -32,6 +37,8 @@ public class App extends JavaPlugin{
         Bukkit.getConsoleSender().sendMessage("Enabled...");
         plugin = JavaPlugin.getPlugin(App.class);
         Stats.registerStats();
+        Messages.registerMessages();
+        Settings.registerSettings();
         registerEvents();
         registerCommands();
         Helpers.setUpHashMap();
@@ -48,7 +55,8 @@ public class App extends JavaPlugin{
         pm.registerEvents(new GeneralMenuPlayer(), this);
         pm.registerEvents(new ChatListenerForMenus(), this);
         pm.registerEvents(new PickUpOrb(), this);
-
+        pm.registerEvents(new ClassesMenu(), this);
+        pm.registerEvents(new RPGClasses(), this);
     }
 
     public void registerCommands(){
@@ -57,5 +65,6 @@ public class App extends JavaPlugin{
         this.getCommand("transfer").setExecutor(new Transfer());
         this.getCommand("orbs").setExecutor(new Orbs());
         this.getCommand("manager").setExecutor(new Manager());
+        this.getCommand("class").setExecutor(new ClassSelector());
     }
 }

@@ -11,8 +11,8 @@ import org.bukkit.inventory.Inventory;
 
 import net.md_5.bungee.api.ChatColor;
 import net.mythics.utils.Items;
-import net.mythics.utils.Stats;
 import net.mythics.utils.inventories.Helpers;
+import net.mythics.utils.ymls.Stats;
 
 public class GeneralMenuPlayer implements Listener{
     public static void createInventory(Player player){

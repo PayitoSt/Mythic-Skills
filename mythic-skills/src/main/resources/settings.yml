@@ -1,0 +1,22 @@
+Classes:
+  brutus:
+    required_prestiges:
+    - resistance
+    - toughness
+    invalid_prestiges:
+    - agility
+    - attack_speed
+  vampire:
+    required_prestiges:
+    - strength
+    - agility
+    invalid_prestiges:
+    - resistance
+    - toughness
+  knight:
+    required_prestiges:
+    - resistance
+    - toughness
+    - attack_speed
+    - agility
+    - strength

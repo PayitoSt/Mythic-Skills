@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import net.md_5.bungee.api.ChatColor;
-import net.mythics.utils.Stats;
+import net.mythics.utils.ymls.Stats;
 
 public class Manager implements CommandExecutor{
 

@@ -15,9 +15,9 @@ import org.bukkit.inventory.Inventory;
 
 import net.md_5.bungee.api.ChatColor;
 import net.mythics.utils.Items;
-import net.mythics.utils.Stats;
 import net.mythics.utils.inventories.Helpers;
 import net.mythics.utils.statsinventories.items.GeneralItems;
+import net.mythics.utils.ymls.Stats;
 
 public class GeneralMenus implements Listener{
 
@@ -68,20 +68,23 @@ public class GeneralMenus implements Listener{
                 attributeAgility.setBaseValue(0.1);
                 attributeResistance.setBaseValue(20);
 
-
-                String[] prestiges = {"strength", "resistance", "agility","attackspeed","toughness"};
-                stats.set("Players."+player.getUniqueId()+".skills"+".strength", 0);
+                stats.set("Players."+targetPlayer.getUniqueId()+".name", targetPlayer.getDisplayName());
+                stats.set("Players."+targetPlayer.getUniqueId()+".skills"+".strength", 0);
                 // stats.set("Players."+player.getUniqueId()+".skills"+".strength"+".prestige", false);
-                stats.set("Players."+player.getUniqueId()+".skills"+".resistance", 0);
+                stats.set("Players."+targetPlayer.getUniqueId()+".skills"+".resistance", 0);
                 // stats.set("Players."+player.getUniqueId()+".skills"+".resistance"+".prestige", false);
-                stats.set("Players."+player.getUniqueId()+".skills"+".agility", 0);
+                stats.set("Players."+targetPlayer.getUniqueId()+".skills"+".agility", 0);
                 // stats.set("Players."+player.getUniqueId()+".skills"+".agility"+".prestige", false);
-                stats.set("Players."+player.getUniqueId()+".skills"+".attackspeed", 0);
+                stats.set("Players."+targetPlayer.getUniqueId()+".skills"+".attackspeed", 0);
                 // stats.set("Players."+player.getUniqueId()+".skills"+".attackspeed"+".prestige", false);
-                stats.set("Players."+player.getUniqueId()+".skills"+".toughness", 0);
+                stats.set("Players."+targetPlayer.getUniqueId()+".skills"+".toughness", 0);
                 // stats.set("Players."+player.getUniqueId()+".skills"+".toughness"+".prestige", false);
-                stats.set("Players."+player.getUniqueId()+".skills"+".orbs", 0);
-                stats.set("Players."+player.getUniqueId()+".skills"+".prestiges", prestiges);
+                stats.set("Players."+targetPlayer.getUniqueId()+".skills"+".orbs", 0);
+                // stats.set("Players."+player.getUniqueId()+".skills"+".prestiges", prestiges);
+                stats.set("Players."+targetPlayer.getUniqueId()+".skills"+".prestiges", null);
+                if(stats.contains("Players." + targetPlayer.getUniqueId() + ".skills" + ".class")){
+                    stats.set("Players." + targetPlayer.getUniqueId() + ".skills" + ".class", null);
+                }
                 Stats.saveStats();
                 GeneralMenuManager.createInventory(player, targetPlayer);
                 return;

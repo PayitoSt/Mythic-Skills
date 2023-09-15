@@ -19,3 +19,6 @@ commands:
     description: "Checar tus orbes disponibles."
   manager:
     description: "Reiniciar plugin."
+  class:
+    aliases: ["clase","classes"]
+    description: "Elige una clase."

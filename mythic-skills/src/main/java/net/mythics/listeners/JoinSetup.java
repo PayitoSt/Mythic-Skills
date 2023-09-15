@@ -9,7 +9,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import net.mythics.utils.Stats;
+import net.mythics.utils.ymls.Stats;
 
 public class JoinSetup implements Listener{
 
@@ -31,7 +31,7 @@ public class JoinSetup implements Listener{
             attributeAgility.setBaseValue(0.1);
             attributeResistance.setBaseValue(20);
 
-            
+            stats.set("Players."+player.getUniqueId()+".name", player.getDisplayName());
             stats.set("Players."+player.getUniqueId()+".skills"+".strength", 0);
             stats.set("Players."+player.getUniqueId()+".skills"+".resistance", 0);
             stats.set("Players."+player.getUniqueId()+".skills"+".agility", 0);

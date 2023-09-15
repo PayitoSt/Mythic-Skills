@@ -1,4 +1,4 @@
-package net.mythics.utils;
+package net.mythics.utils.ymls;
 
 import java.io.File;
 import java.io.IOException;

@@ -8,8 +8,8 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
 import net.md_5.bungee.api.ChatColor;
-import net.mythics.utils.Stats;
 import net.mythics.utils.inventories.Helpers;
+import net.mythics.utils.ymls.Stats;
 
 public class Transfer implements CommandExecutor{
 

@@ -90,7 +90,7 @@ public class Helpers {
                 case "agility":
                     newString.append("&b★");
                     break;
-                case "attackspeed":
+                case "attack_speed":
                     newString.append("&4★");
                     break;
                 case "toughness":

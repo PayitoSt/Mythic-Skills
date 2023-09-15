@@ -14,10 +14,12 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
 import net.md_5.bungee.api.ChatColor;
+import net.mythics.utils.ymls.Stats;
 
 public class Items {
 
     public static int generalLevel(int exp){
+
 
         if(exp <=9){
             return 1;
@@ -152,7 +154,7 @@ public class Items {
 
         meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&fOrbe de experiencia &d(mega)"));
 
-        meta.setCustomModelData(1001);
+        meta.setCustomModelData(1004);
 
         List<String> lore = new ArrayList<String>();
 
