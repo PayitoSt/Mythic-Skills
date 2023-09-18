@@ -7,6 +7,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+import net.md_5.bungee.api.ChatColor;
 import net.mythics.utils.Items;
 import net.mythics.utils.ymls.Stats;
 
@@ -117,5 +118,26 @@ public class Helpers {
         int summation = strength+agility+resistance+attackspeed+toughness;
 
         return summation/100;
+    }
+
+
+    public static boolean playerHasClan(Player player){
+        FileConfiguration stats = Stats.getStats();
+
+        if(stats.contains("Players."+player.getUniqueId()+".skills"+".clan")){
+            return true;
+        }
+
+        return false;
+    }
+
+    public static void setPlayerClan(Player player, String clanName){
+        FileConfiguration stats = Stats.getStats();
+
+        String path = "Players."+player.getUniqueId()+".skills"+".clan";
+
+        stats.set(path, clanName);
+
+        player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&8» &7Creaste un clan correctamente."));
     }
 }

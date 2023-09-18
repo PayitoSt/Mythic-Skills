@@ -5,8 +5,8 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>net.mythics</groupId>
-  <artifactId>Skills</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <artifactId>skills</artifactId>
+  <version>1.0-SNAPSHOT</version>
 
   <name>MythicSkills</name>
   <description>Mythic Skills</description>
@@ -19,6 +19,14 @@
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
+
+  <distributionManagement>
+    <repository>
+        <id>github</id>
+        <name>GitHub PayitoSt Maven Packages</name>
+        <url>https://maven.pkg.github.com/PayitoSt/Mythic-Skills</url>
+    </repository>
+  </distributionManagement>
 
   <repositories>
     <repository>
