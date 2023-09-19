@@ -24,7 +24,7 @@
     <repository>
         <id>github</id>
         <name>GitHub PayitoSt Maven Packages</name>
-        <url>https://maven.pkg.github.com/PayitoSt/Mythic-Skills</url>
+        <url>https://maven.pkg.github.com/PayitoSt/mythic-skills</url>
     </repository>
   </distributionManagement>
 
